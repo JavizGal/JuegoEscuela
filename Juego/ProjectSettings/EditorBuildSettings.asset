@@ -5,7 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: e6086651896b5934cbd3e1401858f4e1
+  - enabled: 1
+    path: Assets/Scenes/MapasAventura.unity
+    guid: 7ddf203a1038b024a8597505a6773314
+  - enabled: 1
+    path: Assets/Scenes/Configuraciones.unity
+    guid: b5aacd4b73e0d7442a91020cb07bec06
+  - enabled: 1
+    path: Assets/Scenes/MapasInifinito.unity
+    guid: 47c59d30e7a3853469c14ed6e658ef4a
+  - enabled: 1
+    path: Assets/Scenes/MenuInfinito.unity
+    guid: 4d2c8630ac12d1f42846a6b725ee4eb7
+  - enabled: 1
+    path: Assets/Scenes/Nivel1.unity
+    guid: f7e0ddb92ded27e4d9230b20b387d771
+  - enabled: 1
+    path: Assets/Scenes/Nivel2.unity
+    guid: 16c5a3727af93974d850590ecf548ae7
+  - enabled: 1
+    path: Assets/Scenes/Nivel3.unity
+    guid: 2b529fec687081f4f9f51f5222232817
+  - enabled: 1
+    path: Assets/Scenes/Nivel4.unity
+    guid: 731558e2a561d7f4cb5c89386c72e0a4
+  - enabled: 1
+    path: Assets/Scenes/Skins.unity
+    guid: 58317999ed2f0df41b837fa6128b58ea
   m_configObjects: {}
