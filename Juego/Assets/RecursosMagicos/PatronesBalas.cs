@@ -8,17 +8,21 @@ public class PatronesBalas : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private int BalasEncontradas;
+    private int BalasEncontradas = 0;
+    private float[] PosicionesX = new float[50];
+    private float[] PosicionesY = new float[50];
+    private float[] PatronesBala = new float[50];
     private Image[] Balas = new Image[50];
 
     void Start()
     {
-        
+        EncontrarBalas();
     }
 
     // Update is called once per frame
     void Update()
     {
+        MoverBalas();
     }
 
     void EncontrarBalas()
@@ -28,26 +32,49 @@ public class PatronesBalas : MonoBehaviour
             if (GameObject.Find($"Balita{i+1}"))
             {
                 Balas[i] = GameObject.Find($"Balita{i+1}").GetComponent<Image>();
-                BalasEncontradas ++;
+                PosicionesX[i] = Balas[i].transform.position.x;
+                PosicionesY[i] = Balas[i].transform.position.y;
+                PatronesBala[i] = 0;
+                BalasEncontradas++;
             }
         }
+        Debug.Log(BalasEncontradas);
 
-        Console.Write(BalasEncontradas);
-
-     //   MoverBalas();
     }
 
     void MoverBalas()
     {
         if (BalasEncontradas == 3)
         {
-            MovimientoDe3();
+            Patron1_1(1);
         }
     }
 
-    void MovimientoDe3()
+    void Patron1_1(int NumeroDeBala)
     {
-        Balas[1].transform.position = new Vector3(1, 1, 1);
+        if (Balas[NumeroDeBala].rectTransform.position.y < -300)
+        {
+            PatronesBala[NumeroDeBala] = 1;
+        }
+        if (PatronesBala[NumeroDeBala] == 0)
+        {
+            MovimientoIndividual(NumeroDeBala, 1, -1);
+        }
+
+        if (PatronesBala[NumeroDeBala] == 1)
+        {
+            MovimientoIndividual(NumeroDeBala, 1, 1);
+        }
+
+        
+        
+    }
+
+    void MovimientoIndividual(int NumeroBala, int VelocidadX, int VelocidadY)
+    {
+        Balas[NumeroBala].rectTransform.position = new Vector2(PosicionesX[NumeroBala], PosicionesY[NumeroBala]);
+        PosicionesX[NumeroBala] += VelocidadX;
+        PosicionesY[NumeroBala] += VelocidadY;
     }
 
 }
